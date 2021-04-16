@@ -57,7 +57,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSQLDatabase",
+						"referenceName": "AzureSQLTables",
 						"type": "DatasetReference",
 						"parameters": {
 							"tableName": "Airline"
@@ -106,7 +106,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureSQLDatabase",
+						"referenceName": "AzureSQLTables",
 						"type": "DatasetReference",
 						"parameters": {
 							"tableName": "Airline"
