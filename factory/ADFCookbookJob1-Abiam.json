@@ -1,0 +1,9 @@
+{
+	"name": "ADFCookbookJob1-Abiam",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0cce10bd-659b-4232-b389-5de53f7cb899",
+		"tenantId": "0e16915c-36bf-4430-93a4-293d768c8d60"
+	}
+}
