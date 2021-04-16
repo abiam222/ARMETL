@@ -21,7 +21,8 @@
 					},
 					"fieldList": [
 						"itemName",
-						"lastModified"
+						"lastModified",
+						"childItems"
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
@@ -33,8 +34,8 @@
 				}
 			},
 			{
-				"name": "Insert Metadata",
-				"type": "SqlServerStoredProcedure",
+				"name": "FilterOnCsv",
+				"type": "Filter",
 				"dependsOn": [
 					{
 						"activity": "CsvDataFolder Metadata",
@@ -43,43 +44,16 @@
 						]
 					}
 				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[InsertFileMetadata]",
-					"storedProcedureParameters": {
-						"FileName": {
-							"value": {
-								"value": "@activity('CsvDataFolder Metadata').output.itemName",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"ModifiedAt": {
-							"value": {
-								"value": "@convertFromUtc(utcnow(), 'Pacific Standard Time')",
-								"type": "Expression"
-							},
-							"type": "DateTime"
-						},
-						"UpdatedAt": {
-							"value": {
-								"value": "@convertFromUtc(utcnow(), 'Pacific Standard Time')",
-								"type": "Expression"
-							},
-							"type": "DateTime"
-						}
+					"items": {
+						"value": "@activity('CsvDataFolder Metadata').output.childItems",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@endswith(item().name, '.csv')",
+						"type": "Expression"
 					}
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
 				}
 			}
 		],
