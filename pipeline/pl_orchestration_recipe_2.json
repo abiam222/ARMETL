@@ -63,7 +63,7 @@
 						},
 						"ModifiedAt": {
 							"value": {
-								"value": "@convertFromUtc(activity('CsvDataFolder Metadata').output.lastModified, 'Pacific Standard Time')",
+								"value": "@convertFromUtc(utcnow(), 'Pacific Standard Time')",
 								"type": "Expression"
 							},
 							"type": "DateTime"
