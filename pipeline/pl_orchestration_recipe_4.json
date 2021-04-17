@@ -60,7 +60,7 @@
 						"referenceName": "AzureSQLTables",
 						"type": "DatasetReference",
 						"parameters": {
-							"tableName": "Airlinexx"
+							"tableName": "Airline"
 						}
 					}
 				]
