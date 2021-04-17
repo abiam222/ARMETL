@@ -60,7 +60,7 @@
 						"referenceName": "AzureSQLTables",
 						"type": "DatasetReference",
 						"parameters": {
-							"tableName": "Airline"
+							"tableName": "Airlinexx"
 						}
 					}
 				]
@@ -181,8 +181,8 @@
 				}
 			},
 			{
-				"name": "On Failure",
-				"type": "SqlServerStoredProcedure",
+				"name": "Send Email On Failure",
+				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
 						"activity": "Copy From Blob to Azure SQL",
@@ -191,47 +191,13 @@
 						]
 					}
 				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[InsertPipelineLog]",
-					"storedProcedureParameters": {
-						"PipelineID": {
-							"value": {
-								"value": "@pipeline().Pipeline",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"RunID": {
-							"value": {
-								"value": "@pipeline().RunId",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"Status": {
-							"value": "Failure",
-							"type": "String"
-						},
-						"UpdatedAt": {
-							"value": {
-								"value": "@utcnow()",
-								"type": "Expression"
-							},
-							"type": "DateTime"
-						}
-					}
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
+					"pipeline": {
+						"referenceName": "pl_orchestration_recipe_5_child",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
 				}
 			}
 		],
