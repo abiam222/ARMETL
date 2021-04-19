@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFCookbookJob1-Abiam"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"OrchestrationBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"adfcookbookstorage12_connectionString": {
+			"value": ""
+		},
+		"trigger_blob_added_properties_typeProperties_scope": {
+			"value": "/subscriptions/d4be6b15-2bab-4aaf-b59e-6d64206deec4/resourceGroups/ADF-Cookbook/providers/Microsoft.Storage/storageAccounts/adforchestrationstorage4"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
