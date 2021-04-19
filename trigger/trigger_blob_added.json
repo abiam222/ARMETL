@@ -1,0 +1,17 @@
+{
+	"name": "trigger_blob_added",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/data/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/d4be6b15-2bab-4aaf-b59e-6d64206deec4/resourceGroups/ADF-Cookbook/providers/Microsoft.Storage/storageAccounts/adforchestrationstorage4",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
