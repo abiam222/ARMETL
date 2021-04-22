@@ -1,0 +1,29 @@
+{
+	"name": "AutoStartDWPipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "startDW",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://management.azure.com/subscriptions/d4be6b15-2bab-4aaf-b59e-6d64206deec4/resourceGroups/ADF-Cookbook/providers/Microsoft.Sql/servers/synanalyticsws/databases/adfcookbookch1devsqldb/resume?api-version=2019-06-01-preview",
+					"method": "POST",
+					"authentication": {
+						"type": "MSI",
+						"resource": "management.core.windows.net"
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
