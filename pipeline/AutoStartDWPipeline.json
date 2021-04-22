@@ -15,11 +15,11 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://management.azure.com/subscriptions/d4be6b15-2bab-4aaf-b59e-6d64206deec4/resourceGroups/ADF-Cookbook/providers/Microsoft.Sql/servers/synanalyticsws/databases/adfcookbookch1devsqldb/resume?api-version=2019-06-01-preview",
+					"url": "https://management.azure.com/subscriptions/d4be6b15-2bab-4aaf-b59e-6d64206deec4/resourceGroups/ADF-Cookbook/providers/Microsoft.Synapse/workspaces/synanalyticsws/sqlPools/adfcookbookch1devsqldb/resume?api-version=2020-08-01-preview",
 					"method": "POST",
 					"authentication": {
 						"type": "MSI",
-						"resource": "management.core.windows.net"
+						"resource": "https://management.core.windows.net"
 					}
 				}
 			}
