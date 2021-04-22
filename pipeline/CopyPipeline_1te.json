@@ -38,6 +38,12 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
+						},
 						"tableOption": "autoCreate"
 					},
 					"enableStaging": true,
@@ -54,8 +60,7 @@
 							{
 								"source": {
 									"name": "Name",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								},
 								"sink": {
 									"name": "Name",
@@ -65,31 +70,22 @@
 							{
 								"source": {
 									"name": "IATA code",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								},
 								"sink": {
-									"name": "IATA code",
-									"type": "String"
+									"name": "IATA_code"
 								}
 							},
 							{
 								"source": {
 									"name": "ICAO code",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								},
 								"sink": {
-									"name": "ICAO code",
-									"type": "String"
+									"name": "ICAO_code"
 								}
 							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
+						]
 					}
 				},
 				"inputs": [

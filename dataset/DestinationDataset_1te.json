@@ -9,7 +9,8 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"table": "Azure Blob Storage file"
+			"schema": "dbo",
+			"table": "Planes"
 		}
 	}
 }
