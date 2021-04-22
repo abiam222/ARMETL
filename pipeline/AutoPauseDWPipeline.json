@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "PuaseDW",
+				"name": "PauseDW",
 				"type": "WebActivity",
 				"dependsOn": [],
 				"policy": {
